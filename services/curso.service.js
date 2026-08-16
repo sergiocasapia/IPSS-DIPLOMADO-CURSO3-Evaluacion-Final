@@ -91,6 +91,8 @@ export const matricularme = async (cursoAlumno, idAlumno) => {
 
 //15.- desmatricularme
 export const desmatricularme = async (cursoAlumno, idAlumno) => {
+  const noexisteAlumno =  cursoAlumno.alumnos.some(alumnoId => alumnoId.equals(idAlumno))
+  if (!noexisteAlumno) return 'NOEXISTE'
   cursoAlumno.alumnos.pull(idAlumno)
   await cursoAlumno.save() 
   return cursoAlumno

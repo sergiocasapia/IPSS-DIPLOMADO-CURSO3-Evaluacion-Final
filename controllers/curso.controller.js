@@ -186,6 +186,7 @@ export const desmatricularme = async (req, res) => {
     if (!curso) return res.status(404).json(NO_ENCONTRADO)
     if (curso.estado === 'CERRADO')  return res.status(409).json(CURSO_CERRADO)
     const delcurso = await service.desmatricularme(curso,idAlumno)
+    if (delcurso === 'NOEXISTE') return res.status(409).json(NO_MATRICULADO)
     res.status(200).json(delcurso)
   } catch (error) {
     res.status(400).json({ error: error.message })
