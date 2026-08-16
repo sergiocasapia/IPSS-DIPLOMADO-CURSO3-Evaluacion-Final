@@ -52,21 +52,22 @@ Metodo HTTP (GET , POST, PUT, DELETE)
 Retorno : 200 al leer bien, 201 al crear, 400 si los datos que llegan están mal o faltan, 404 si el recurso no existe. 401 credenciales invalidas, 409 conflicto datos y 403 id distinto a usuario session.
 
 ### Glosario Tecnico aplicado
-Autenticación y Seguridad 
-JWT: Token compacto para transmitir identidad de forma segura. 
-bcrypt: Librería para encriptar contraseñas en la base de datos. 
-hash: Cadena de texto irreversible generada al encriptar una clave. 
-token: Credencial temporal que autoriza el acceso a rutas protegidas. 
-Consultas y Persistencia (Mongoose) 
-toJSON: Limpia el objeto eliminando datos sensibles (como la contraseña) antes de enviarlo. 
-find: Busca todos los documentos que coincidan con un criterio. 
-findOne: Devuelve el primer documento que cumpla la condición. 
-findById: Busca un único documento utilizando directamente su ID único. 
-findByIdAndUpdate: Modifica un registro específico por su ID en una sola operación. 
-findByIdAndDelete: Elimina de forma permanente un registro mediante su ID. 
-populate: Reemplaza los IDs de referencia con los datos reales de otra colección. 
-save: Guarda los cambios locales del documento directamente en la base de datos. 
-Operaciones en Arreglos 
-push: Añade un nuevo elemento al final de un arreglo del documento. 
-pull: Elimina todas las apariciones de un valor específico dentro de un arreglo. 
+Autenticación y Seguridad. 
+JWT: Token compacto para transmitir identidad de forma segura.  
+bcrypt: Librería para encriptar contraseñas en la base de datos.  
+hash: Cadena de texto irreversible generada al encriptar una clave.  
+token: Credencial temporal que autoriza el acceso a rutas protegidas.  
+Consultas y Persistencia (Mongoose). 
+toJSON: Limpia el objeto eliminando datos sensibles (como la contraseña) antes de enviarlo.  
+find: Busca todos los documentos que coincidan con un criterio.  
+findOne: Devuelve el primer documento que cumpla la condición.  
+findById: Busca un único documento utilizando directamente su ID único.  
+findByIdAndUpdate: Modifica un registro específico por su ID en una sola operación.  
+findByIdAndDelete: Elimina de forma permanente un registro mediante su ID.  
+populate: Reemplaza los IDs de referencia con los datos reales de otra colección.  
+save: Guarda los cambios locales del documento directamente en la base de datos.  
+Operaciones en Arreglos. 
+push: Añade un nuevo elemento al final de un arreglo del documento.  
+pull: Elimina todas las apariciones de un valor específico dentro de un arreglo.  
+
 
