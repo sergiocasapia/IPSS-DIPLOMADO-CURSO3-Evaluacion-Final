@@ -13,9 +13,8 @@ los conectan. Es una API REST completa — con base de datos, autenticación por
 (JWT + bcrypt) y relaciones entre entidades.
 
 ### Youtube  
-XXX. 
-
-
+https://youtu.be/eUP7YfSkxsE  
+ 
 ### Deploy
 Sitio desplegado: N/A
 
