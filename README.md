@@ -14,20 +14,19 @@ los conectan. Es una API REST completa — con base de datos, autenticación por
 
 
 ### Deploy
-Sitio desplegado: https://gakertz.github.io/IPSS-evaluacion-clases-1-y-2/
+Sitio desplegado: N/A
 
 ### Capturas del sitio
 N/A
 
 ### Cómo correr localmente
-git clone : https://github.com/ivandress/IPSS-DIPLOMADO-CURSO3-Evaluacion-Final
-VSC ir a terminal de ruta de proyecto clonado y ejecutar : npm install
-Levanta API REST : node server.js (deja corriendo : http://localhost:3000)
-Levantar PostMan y importar archivo : PlataformaCursos.postman_collection.json
-Pruebas : Ejecutar en secuencia segun plan incluido :
+git clone : https://github.com/sergiocasapia/IPSS-DIPLOMADO-CURSO3-Evaluacion-Final.git 
+VSC ir a terminal de ruta de proyecto clonado y ejecutar : npm install 
+Levanta API REST : node server.js (deja corriendo : http://localhost:3000) 
+Levantar PostMan y importar archivo : PlataformaCursos.postman_collection.json 
 
 ### Endpoinst (Rutas API)
-Metodo HTTP (GET , POST, PUT, DELETE)
+Metodo HTTP (GET , POST, PUT, DELETE) 
 
 ### Detalle Metodos (Testing)
 | ID Caso | Modulo     | Descripcion                                           | PostMan                       | Metodo | Cod. Real | Estado (Pasa/Falla) | Observaciones                                                                      | Validaciones                                                                                                              |
@@ -53,20 +52,21 @@ Metodo HTTP (GET , POST, PUT, DELETE)
 Retorno : 200 al leer bien, 201 al crear, 400 si los datos que llegan están mal o faltan, 404 si el recurso no existe. 401 credenciales invalidas, 409 conflicto datos y 403 id distinto a usuario session.
 
 ### Glosario Tecnico aplicado
-Autenticación y Seguridad
-JWT: Token compacto para transmitir identidad de forma segura.
-bcrypt: Librería para encriptar contraseñas en la base de datos.
-hash: Cadena de texto irreversible generada al encriptar una clave.
-token: Credencial temporal que autoriza el acceso a rutas protegidas.
-Consultas y Persistencia (Mongoose)
-toJSON: Limpia el objeto eliminando datos sensibles (como la contraseña) antes de enviarlo.
-find: Busca todos los documentos que coincidan con un criterio.
-findOne: Devuelve el primer documento que cumpla la condición.
-findById: Busca un único documento utilizando directamente su ID único.
-findByIdAndUpdate: Modifica un registro específico por su ID en una sola operación.
-findByIdAndDelete: Elimina de forma permanente un registro mediante su ID.
-populate: Reemplaza los IDs de referencia con los datos reales de otra colección.
-save: Guarda los cambios locales del documento directamente en la base de datos.
-Operaciones en Arreglos
-push: Añade un nuevo elemento al final de un arreglo del documento.
-pull: Elimina todas las apariciones de un valor específico dentro de un arreglo.
+Autenticación y Seguridad 
+JWT: Token compacto para transmitir identidad de forma segura. 
+bcrypt: Librería para encriptar contraseñas en la base de datos. 
+hash: Cadena de texto irreversible generada al encriptar una clave. 
+token: Credencial temporal que autoriza el acceso a rutas protegidas. 
+Consultas y Persistencia (Mongoose) 
+toJSON: Limpia el objeto eliminando datos sensibles (como la contraseña) antes de enviarlo. 
+find: Busca todos los documentos que coincidan con un criterio. 
+findOne: Devuelve el primer documento que cumpla la condición. 
+findById: Busca un único documento utilizando directamente su ID único. 
+findByIdAndUpdate: Modifica un registro específico por su ID en una sola operación. 
+findByIdAndDelete: Elimina de forma permanente un registro mediante su ID. 
+populate: Reemplaza los IDs de referencia con los datos reales de otra colección. 
+save: Guarda los cambios locales del documento directamente en la base de datos. 
+Operaciones en Arreglos 
+push: Añade un nuevo elemento al final de un arreglo del documento. 
+pull: Elimina todas las apariciones de un valor específico dentro de un arreglo. 
+
