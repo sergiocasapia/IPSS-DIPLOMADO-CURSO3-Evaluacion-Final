@@ -130,6 +130,7 @@ export const cerrar = async (req, res) => {
     // TODO: cerrar el curso. Si no existe → 404.
       const curso = await service.cerrarCurso(req.params.id)
       if (!curso) return res.status(404).json(NO_ENCONTRADO)
+      if (curso.estado === 'CERRADO')  return res.status(409).json(CURSO_CERRADO)
       res.status(200).json(curso)
   } catch (error) {
     res.status(400).json({ error: error.message })
