@@ -7,6 +7,9 @@ import * as controller from '../controllers/auth.controller.js'
 export const authRoutes = Router()
 
 // TODO: conecta cada ruta con su controller.
-// authRoutes.post('/registro/profesor', controller.registrarProfesor)
-// authRoutes.post('/registro/alumno', controller.registrarAlumno)
-// authRoutes.post('/login', controller.login)
+//2.- registrar profesor
+authRoutes.post('/registro/profesor', controller.registrarProfesor)
+//3.- registrar alumno
+authRoutes.post('/registro/alumno', controller.registrarAlumno)
+//4.- login profesor/alumno
+authRoutes.post('/login', controller.login)

@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import 'dotenv/config'
 
 // ---------------------------------------------------------------------------
 // CONFIG — conexión a MongoDB.
@@ -9,8 +10,10 @@ import mongoose from 'mongoose'
 // ⚠️ Tu repo es PÚBLICO: no subas tu contraseña real. Deja los marcadores, o
 //    apunta a una base local. Nadie debe poder entrar a tu base desde tu repo.
 
-const MONGODB_URI =
-  'mongodb+srv://usuario-mongo:clave-secreta@cluster0.xxxxx.mongodb.net/plataforma'
+//const MONGODB_URI = 
+//mongodb+srv://usuario-mongo:clave-secreta@cluster0.xxxxx.mongodb.net/plataforma'
+
+const MONGODB_URI = process.env.MONGODB_URI
 
 export const conectar = async () => {
   await mongoose.connect(MONGODB_URI)

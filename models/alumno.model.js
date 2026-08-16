@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import bcrypt from 'bcryptjs'
 
 // ---------------------------------------------------------------------------
 // MODELO — Alumno.
@@ -11,9 +12,16 @@ import mongoose from 'mongoose'
 
 const alumnoSchema = new mongoose.Schema(
   {
-    // ...
+    nombre : { type:String, required:true },
+    email : { type:String, unique:true, required:true },
+    telefono : { type:String },
+    password : { type:String, required:true }
   },
   { timestamps: true },
 )
+
+alumnoSchema.methods.compararPassword = function (passwordPlano) {
+  return bcrypt.compare(passwordPlano, this.password)
+}
 
 export const Alumno = mongoose.model('Alumno', alumnoSchema, 'alumnos')

@@ -1,0 +1,579 @@
+{
+  "info": {
+    "_postman_id": "4450c101-3a7b-4acd-8445-2bc9d9ec6508",
+    "name": "PlataformaCursos",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56432083",
+    "_collection_link": "https://go.postman.co/collection/56432083-4450c101-3a7b-4acd-8445-2bc9d9ec6508?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Saludos",
+      "item": [
+        {
+          "name": "1-GET_Saludo",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000"
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "2-POST_Profesor",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"nombre\": \"Profesor3\",\n    \"email\": \"profesor3@gmail.com\",\n    \"password\": \"admin123\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/registro/profesor",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "registro",
+                "profesor"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "3-POST_Alumno",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\n    \"nombre\" : \"Alumno3\",\n    \"email\" : \"alumno3@gmail.com\",\n    \"telefono\" : \"569241264\",\n    \"password\" : \"admin123\"\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/registro/alumno",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "registro",
+                "alumno"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "4-POST_Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n    \"email\" : \"alumno1@gmail.com\",\n    \"password\" : \"admin123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Curso",
+      "item": [
+        {
+          "name": "Profesor",
+          "item": [
+            {
+              "name": "5-GET_Listar_Cursos",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_087v}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "6-POST_Curso",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_11g9}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Diplomado SQL\",\n  \"fechaInicio\": \"2026-08-15\",\n  \"fechaTermino\": \"2026-12-15\",\n  \"estado\": \"EN_MATRICULA\",\n  \"alumnos\": [\n    \"6a80bbc2ceb9756dd3af4d30\",\n    \"6a80c78b83b2b57af6676a0f\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "7-GET_Cursos_Profesor",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_11g9}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/mis-cursos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "mis-cursos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "8-PUT_Curso",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{supabase_service_role_api_key_0jan}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80d95a8e982600bc2b5118",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80d95a8e982600bc2b5118"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "9-DELETE_Curso",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_0jan}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80dda28e982600bc2b511a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80dda28e982600bc2b511a"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "10-POST_Asigna_Curso_Profesor",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0dj8}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80ea5ccff0876cd9251b9d/asignarme",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80ea5ccff0876cd9251b9d",
+                    "asignarme"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "11-GET_Buscar_Curso",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_0ms0}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80e2968e982600bc2b511c/alumnos",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80e2968e982600bc2b511c",
+                    "alumnos"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "12-PUT_Cerrar_Curso",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{supabase_service_role_api_key_0ms0}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80ea67cff0876cd9251b9e/cerrar",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80ea67cff0876cd9251b9e",
+                    "cerrar"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Alumno",
+          "item": [
+            {
+              "name": "13-GET_Cursos_Alumno",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{supabase_service_role_api_key_12q1}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/mis-matriculas",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "mis-matriculas"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "14-POST_Alumno_Matricula",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0l28}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80ed5ccff0876cd9251b9f/matricularme",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80ed5ccff0876cd9251b9f",
+                    "matricularme"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "15-DELETE_Alumno",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{json_web_token_0l28}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/cursos/6a80ea67cff0876cd9251b9e/matricularme",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "api",
+                    "cursos",
+                    "6a80ea67cff0876cd9251b9e",
+                    "matricularme"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_11fk",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_17jp",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_05yw",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_07s4",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0w6b",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0uvx",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0a8f",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_05ut",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_05ut",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0z8k",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_12q1",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0ms0",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0ms0",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0dj8",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0jan",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0jan",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_11g9",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_11g9",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_087v",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0l28",
+      "secret": true
+    }
+  ]
+}
