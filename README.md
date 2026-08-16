@@ -12,7 +12,6 @@ Profesores que dictan cursos, alumnos que se matriculan, y las reglas de negocio
 los conectan. Es una API REST completa — con base de datos, autenticación por rol
 (JWT + bcrypt) y relaciones entre entidades.
 
-
 ### Deploy
 Sitio desplegado: N/A
 
@@ -20,10 +19,12 @@ Sitio desplegado: N/A
 N/A
 
 ### Cómo correr localmente
-git clone : https://github.com/sergiocasapia/IPSS-DIPLOMADO-CURSO3-Evaluacion-Final.git 
-VSC ir a terminal de ruta de proyecto clonado y ejecutar : npm install 
-Levanta API REST : node server.js (deja corriendo : http://localhost:3000) 
-Levantar PostMan y importar archivo : PlataformaCursos.postman_collection.json 
+git clone : https://github.com/sergiocasapia/IPSS-DIPLOMADO-CURSO3-Evaluacion-Final.git. 
+VSC ir a terminal de ruta de proyecto clonado y ejecutar : npm install. 
+Duplicar archivo marcado .env.example a .env (configurar las variables). 
+Levanta API REST : node server.js (deja corriendo : http://localhost:3000). 
+Levantar PostMan y importar archivo : PlataformaCursos.postman_collection.json  
+
 
 ### Endpoinst (Rutas API)
 Metodo HTTP (GET , POST, PUT, DELETE) 
@@ -69,5 +70,3 @@ save: Guarda los cambios locales del documento directamente en la base de datos.
 Operaciones en Arreglos. 
 push: Añade un nuevo elemento al final de un arreglo del documento.  
 pull: Elimina todas las apariciones de un valor específico dentro de un arreglo.  
-
-
